@@ -44,29 +44,6 @@ const Avatar: React.FC<{ initials: string }> = ({ initials }) => (
   </div>
 );
 
-const HistoryRow : React.FC<{ entry: HistoryEntry }> = ({ entry }) => {
-  const zone  = ZONE_META[entry.zone];
-  const color = COLORS[zone.color];
-  return (
-    <tr>
-      <td style={{ fontSize: 9, color: COLORS.text, padding: '6px 0',
-        borderBottom: `0.5px solid ${COLORS.border}` }}>
-        {entry.date}
-      </td>
-      <td style={{ fontSize: 9, fontWeight: 600, color, padding: '6px 0',
-        borderBottom: `0.5px solid ${COLORS.border}` }}>
-        {entry.score}
-      </td>
-      <td style={{ textAlign: 'center', padding: '6px 0',
-        borderBottom: `0.5px solid ${COLORS.border}` }}>
-        <Badge color={zone.color}>
-          {zone.label}
-        </Badge>
-      </td>
-    </tr>
-  );
-};
-
 // ── Main Profile Screen ───────────────────────
 export const Profile: React.FC = () => (
   <>
